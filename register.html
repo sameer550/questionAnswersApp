@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reg_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            
+            <h1>Sign Up Form</h1>
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+            <input type="text" name="First Name" onfocus="this.value=''" placeholder="Enter First Name" id="fname">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+            <input type="text" name="Last Name" onfocus="this.value=''" placeholder="Enter Last Name" id="lname">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-envelope icon"></i>
+            <input type="email" name="Email" onfocus="this.value=''"  placeholder="Enter Email Address" id="email">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+            <input type="password" name="Password"  placeholder="Password" id="pass" pattern=".{8,}" title="Eight or more characters">
+            </div>
+            <p id="text">WARNING! Caps lock is ON.</p>
+            <p id ="error">Please Insert Correct Password. </p>
+        
+            <input type="checkbox" class = "txtbox" onclick="show_password()" >
+            <button class="btn_log" onclick=btn() id="btn1">Signup</button>
+       
+            
+       
+        
+        
+   
+        </div>
+      
+           <div class="messageBox"> 
+            <p id="missFname" class="invalid"> ❌ Missing first Name </p>
+            <p id="missLname" class="invalid"> ❌ Missing last Name </p>
+            <p id="missEmail" class="invalid"> ❌ Missing email address</p>
+        </div>
+        
+    </div>
+    <script  src="js/signup.js">
+       
+    </script>
+</body>
+</html>
