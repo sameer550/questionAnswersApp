@@ -33,21 +33,41 @@ function pass_checker(){
         error.style.display="none"
     }
 }
+function validation(){
+    var form = document.getElementById("form");
+    let txt = document.getElementById("txt");
+    let mail = document.getElementById("email").value;
+    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(mail.match(pattern)){
+        form.classList.add("valid1");
+        form.classList.remove("invalid1");
+        txt.innerHTML="Your Email Address is valid";
+        txt.style.color="green";
+        document.getElementById("email").style.marginBottom="0px";
+    }
+    else{
+        form.classList.remove("valid1");
+        form.classList.add("invalid1");
+        txt.innerHTML="Please Enter valid Email address";
+        txt.style.color="red";
+        document.getElementById("email").style.marginBottom="0px";
+    }
+    if(mail=""){
+        form.classList.remove("valid1");
+        form.classList.add("invalid1");
+        txt.innerHTML="";
+        txt.style.color="#00ff00"
+        document.getElementById("email").style.marginBottom="0px";
+    }
+}
 function btn(){
-            
-      var k = document.getElementById(pass).value;
-      console.log(k.lenght);
-
-
-        // localStorage.setItem('formData',JSON.stringify(formData));
-        // console.log(localStorage.getItem('formData'));
 
         var emailData = document.getElementById("email").value;
         var fnameData = document.getElementById("fname").value;
         var lnameData = document.getElementById("lname").value;
         
        
-        if(fnameData == ""){
+        if(fnameData == "" ){
             document.getElementById("fname").style.borderColor="red";
             document.getElementById("missFname").classList.remove("invalid");
             document.getElementById("missFname").classList.add("valid");
@@ -66,18 +86,21 @@ function btn(){
             // return false;    
         }
         else{
-            // alert("eeeee arrived at ekse aelse ")
+      
             let formData={
                 fname: document.getElementById("fname").value,
                 lname: document.getElementById("lname").value,
                 email: document.getElementById("email").value,
-                password: document.getElementById("pass").value
+                password: document.getElementById("pass").value,
+                admin: document.getElementById("myCheck1").checked,
+                employ: document.getElementById("myCheck2").checked
             }
 
-            let b=JSON.stringify(formData);
-            userData1.push(b);
-            localStorage.setItem("dataUser",(userData1));
-            console.log(localStorage.getItem("dataUser"));
+            userData1.push(formData);
+            console.log("userData",userData1)
+            localStorage.setItem("dataUser",JSON.stringify(userData1));
+            console.log(localStorage.getItem("dataUser"));          
+            window.location.href="file:///C:/Users/Admin/Desktop/js%20project/login.html";
             return true
         }
 }

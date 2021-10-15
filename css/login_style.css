@@ -16,8 +16,9 @@ body{
     background: #fff;
     max-width: 360px; */
     margin: 0 auto 100px;
-    padding: 45px;
+    /* padding: 45px; */
     text-align: center;
+    position: relative;
 }
 .form input{
 
@@ -35,10 +36,12 @@ body{
     padding: 15px;
     font-size: 18px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 .btn_log:hover{
     background: #ffff;
     color: black;
+    transition: 0.5s;
 }
 .input-container {
     display: -ms-flexbox; 
@@ -55,3 +58,96 @@ body{
     height: 25px;
     padding-top: 16px;
 }
+
+#text{
+    color:red;
+    display: none;
+    margin-top: 0px;
+}
+.btn_redirect{
+    margin-top: 20px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid black;
+    color: white;
+    background-color: black;   
+    /* text-transform: uppercase;  */
+}
+.btn_redirect:hover{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+} 
+
+.boxs{
+    display: flex;
+
+    justify-content: space-around;
+ 
+}
+#email{
+    position: relative;
+
+}
+#txt{
+    display: block;
+    padding-top: 0px;
+    padding: 5px;
+    font-style: italic;
+    font-weight: 600;
+     
+
+}
+.form.invalid .input-container::before{
+    position: absolute;
+    right: 12px;
+    top: 72px;
+    width: 24px;
+    height: 24px;
+    background:url(../img/Copy\ of\ invalid.png);
+    background-size: cover;
+    content: '';
+}
+.form.valid .input-container::before{
+    position: absolute;
+    right: 12px;
+    top: 72px;
+    width: 24px;
+    height: 24px;
+    background:url(../img/valid.png);
+    background-size: cover;
+    content: '';
+}
+#pass-txt{
+    display: block;
+    padding-top: 0px;
+    padding: 5px;
+    padding-bottom: 10px;
+    font-style: italic;
+    font-weight: 600;
+     
+
+}
+
+/* .form.invalid1 .input-container:before{
+    position: absolute;
+    right: 12px;
+    top: 146px;
+    width: 24px;
+    height: 24px;
+    background:url(../img/Copy\ of\ invalid.png);
+    background-size: cover;
+    content: '';
+}
+.form.valid1 .input-container:before{
+    position: absolute;
+    right: 12px;
+    top:146px;
+    width: 24px;
+    height: 24px;
+    background:url(../img/valid.png);
+    background-size: cover;
+    content: '';
+} */

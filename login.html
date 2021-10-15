@@ -11,19 +11,29 @@
 </head>
 <body>
     <div class="container">
-        <div class="form">
+        <div class="form" id="form">
             <h1>Login Form</h1>
             <!-- <input type="text" name="Name" placeholder="Enter Name" id="name"> -->
             <div class="input-container">
                 <i class="fa fa-envelope icon"></i>
-            <input type="email" name="Email" onfocus="this.value=''" placeholder="Enter Email Address" id="email">
+            <input type="email" name="Email" placeholder="Enter Email Address" id="email" onkeyup="validation()">
+            
             </div>
+            <span id="txt"> </span>
+            <!-- <p id="txt" class="txt1" >Email is invalid</p> -->
             <div class="input-container">
                 <i class="fa fa-key icon"></i>
-            <input type="password" name="Password" onfocus="this.value=''" placeholder="Password" id="pass">
+            <input type="password" name="Password" placeholder="Password" id="password" onkeyup="pass_validation()">
             </div>
-            <a href="register.html">Create New Account</a>
-            <button class="btn_log" onclick=btn() id="btn1">login</button>
+            <span id="pass-txt"> </span>
+            <!-- <div class="boxs"> -->
+            <!-- <label for="myCheck">Admin: </label> 
+            <input type="checkbox" id="myCheck1">
+                <label for="myCheck">Employ: </label> 
+                <input type="checkbox" id="myCheck2" >
+            </div> -->
+            <button class="btn_log" onclick=btn1() id="btn1">login</button>
+            <a href="register.html" class="btn_redirect">Create New Account</a>
         </div>
     </div>
     <script src="js/login.js">

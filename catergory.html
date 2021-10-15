@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/catergory_style.css">
+</head>
+<body>
+    <div class="alert-message">
+        <div class="success" id="success">
+            <img src="img/valid.png" alt="" class="valid-img">
+            <p class="check">Your application was successfully sent.</p>
+            <span class="close" id="close">&times;</span>
+            
+        </div>
+    </div>
+    <script>
+        let closebtns = document.getElementById("close");
+          closebtns.addEventListener("click", function() {
+            this.parentElement.style.display = 'none';
+          });
+        
+        </script>
+    <div class="container">
+        <div class="form" id="form">
+            <h1>Category</h1>
+            <div class="input-container">
+                <input type="Category name" name="" placeholder="Enter Category name" id="category-name" >
+                <p id="txt" class="txt"> ❌ Please Fill Required Fields </p>
+                <!-- <select name="category" id="category" class="cat-selector">
+                    <optgroup label="Swedish Cars">
+                      <option selected="">Please select</option>
+                      <option value="web Developers">web Developers</option>
+                      <option value="Software Developers">Software Developers</option>
+                      <option value="Team leads">Team leads</option>
+                      <option value="Cyber Security">Cyber Security</option>
+                    </optgroup>
+                  </select> -->
+                  <button class="btn_log" onclick=validation() id="btn1">login</button>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        var i=0;
+        function validation() {
+
+            let name = document.getElementById("category-name").value;
+            if(name === ""){
+                document.getElementById("category-name").style.borderColor="red";
+                document.getElementById("category-name").style.marginBottom="5px";
+                document.getElementById("txt").style.display="block";
+                
+            }
+            else{
+                document.getElementById("txt").style.display="none"
+                document.getElementById("category-name").style.borderColor="black";
+                document.getElementById("success").classList.add("valid");
+                setTimeout(()=>{
+                    document.getElementById("success").classList.remove("valid");
+                },3000)
+            }
+            // localStorage.setItem("cat_name",name);
+           let id =JSON.parse(localStorage.getItem("dataUser"));
+        //    console.log(id[0].email);
+           let email = id[i].email;
+           ++i;
+           let cat_name={
+               category_name:name,
+               email : email
+           }
+           localStorage.setItem("category_name",JSON.stringify(cat_name));
+           
+
+        }
+    </script>
+</body>
+</html>
